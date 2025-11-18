@@ -767,37 +767,20 @@ Contraseña: admin
 
 ## Conclusión Técnica
 
-### ¿Qué aprendió al integrar Docker, AWS y Prometheus?
+¿Qué aprendí?
 
-Al integrar Docker, AWS y Prometheus, aprendí la importancia de la automatización y la estandarización en el despliegue de aplicaciones. Docker permite empaquetar la aplicación con todas sus dependencias, garantizando que funcione de manera consistente en diferentes entornos (local y en la nube). AWS EC2 proporciona la infraestructura escalable necesaria para desplegar aplicaciones en producción, mientras que Prometheus y Grafana ofrecen visibilidad completa del rendimiento del sistema. Esta integración demuestra cómo las herramientas modernas de DevOps permiten crear pipelines de despliegue reproducibles y monitoreados.
+A integrar despliegues seguros, contenedorización y monitoreo dentro de un pipeline DevOps real.
+Docker dio portabilidad, AWS permitió simular producción y Prometheus/Grafana ofrecieron observabilidad completa.
 
-### ¿Qué fue lo más desafiante y cómo lo resolvería en un entorno real?
+¿Qué fue lo más desafiante?
 
-El aspecto más desafiante fue la configuración de HTTPS con certificados SSL y la integración de múltiples servicios (Apache, Flask, MySQL, Prometheus, Node Exporter, Grafana) de manera que funcionaran correctamente juntos. En un entorno real, resolvería estos desafíos de la siguiente manera:
+La integración entre Apache, Flask, Docker y SSL.
+En producción usaría Let’s Encrypt, Nginx como reverse proxy y CI/CD para evitar configuraciones manuales.
 
-1. **Certificados SSL**: En lugar de usar certificados autofirmados dentro del repositorio, implementaría Let's Encrypt con Certbot para obtener certificados válidos automáticamente. Los certificados se generarían en el servidor y se montarían como volúmenes externos, nunca dentro del repositorio por razones de seguridad.
+¿Por qué la observabilidad es clave?
 
-2. **Orquestación**: Utilizaría Kubernetes o Docker Swarm para una mejor gestión de servicios, escalabilidad automática y recuperación ante fallos.
-
-3. **Gestión de secretos**: Implementaría un sistema de gestión de secretos como AWS Secrets Manager o HashiCorp Vault para almacenar credenciales de manera segura.
-
-4. **CI/CD**: Configuraría pipelines automatizados con GitHub Actions o GitLab CI para despliegues automáticos tras cada commit.
-
-5. **Monitoreo avanzado**: Implementaría Alertmanager para gestionar notificaciones de alertas y configuraría canales de comunicación (email, Slack, PagerDuty).
-
-### ¿Qué beneficio aporta la observabilidad en el ciclo DevOps?
-
-La observabilidad es fundamental en el ciclo DevOps porque proporciona:
-
-1. **Visibilidad proactiva**: Permite detectar problemas antes de que afecten a los usuarios finales, mediante métricas de CPU, memoria, disco y rendimiento de la aplicación.
-
-2. **Troubleshooting rápido**: Facilita la identificación de la causa raíz de los problemas mediante dashboards y alertas configuradas, reduciendo el tiempo de resolución (MTTR).
-
-3. **Toma de decisiones basada en datos**: Las métricas históricas permiten tomar decisiones informadas sobre escalabilidad, optimización de recursos y planificación de capacidad.
-
-4. **Mejora continua**: Al analizar las métricas de rendimiento, se pueden identificar cuellos de botella y oportunidades de optimización, mejorando continuamente la aplicación y la infraestructura.
-
-5. **Cumplimiento y SLA**: Permite demostrar el cumplimiento de acuerdos de nivel de servicio (SLA) y mantener la disponibilidad y rendimiento esperados.
+Permite detectar saturación y fallos antes de afectar al usuario.
+Prometheus y Grafana convierten el sistema en algo medible y visible, habilitando alertas automáticas, diagnósticos rápidos y decisiones basadas en datos.
 
 ### Nota sobre los certificados SSL
 
