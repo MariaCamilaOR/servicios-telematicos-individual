@@ -530,6 +530,8 @@ http://192.168.60.3:9090/alerts
    - `(1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100`
    - `node_filesystem_avail_bytes{mountpoint="/"} / 1024 / 1024 / 1024`
    - `(1 - (node_filesystem_avail_bytes{mountpoint="/"} / node_filesystem_size_bytes{mountpoint="/"})) * 100`
+<img width="1909" height="1037" alt="image" src="https://github.com/user-attachments/assets/1dd33418-32a2-461c-9647-b561c74f3b7a" />
+
 7. En el menú superior, haz clic en **"Alerts"** para ver las alertas configuradas
 
 ## 4. Visualización con Grafana
@@ -630,3 +632,4 @@ http://192.168.60.3:3000
 Usuario: admin
 Contraseña: admin
 ```
+<img width="1905" height="1034" alt="image" src="https://github.com/user-attachments/assets/9d290abe-814d-4bb9-93c1-d929881e9c30" />
