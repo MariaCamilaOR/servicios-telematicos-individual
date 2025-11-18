@@ -363,11 +363,7 @@ git remote add origin https://github.com/MariaCamilaOR/servicios-telematicos-ind
 
 git push -u origin main
 ```
-
-Cuando te pida credenciales:
-- Username: MariaCamilaOR
-- Password: ghp_anpS....
-
+Clonamos el repositorio:
 ```bash
 # En EC2, clonar el repositorio
 cd ~
@@ -394,21 +390,16 @@ docker compose up -d --build
 # Verificar el estado de los contenedores
 docker compose ps
 
-# Probar los endpoints localmente
-curl -I http://localhost
-curl -kI https://localhost
+# Probar
+http://44.200.63.227/
 ```
 
 ### 2.5. Verificar acceso remoto
 
 Accede a la aplicación desde tu navegador usando la IP pública de tu instancia EC2:
+<img width="1914" height="1033" alt="image" src="https://github.com/user-attachments/assets/20d9cd1a-da71-4923-ac79-471f4de90a6c" />
 
-```
-http://18.206.92.168
-https://18.206.92.168
-```
-
-**Nota:** Reemplaza `18.206.92.168` con la IP pública de tu propia instancia EC2.
+**Nota:** Reemplaza `44.200.63.227` con la IP pública de tu propia instancia EC2.
 
 ## 3. Monitoreo con Prometheus y Node Exporter
 
@@ -660,8 +651,10 @@ http://192.168.60.3:9090/alerts
 
 1. Abre tu navegador
 2. Ve a: `http://192.168.60.3:9090`
+<img width="1916" height="1024" alt="image" src="https://github.com/user-attachments/assets/749e7ece-27b8-4caf-b77d-e1a309363e6f" />
 3. En el menú superior, haz clic en **"Status"** → **"Targets"**
 4. Verifica que ambos targets estén en estado **UP**
+<img width="1908" height="627" alt="image" src="https://github.com/user-attachments/assets/e80069b6-62ed-4ce5-a269-ef008b7d5fc0" />
 5. En el menú superior, haz clic en **"Graph"**
 6. Ejecuta consultas:
    - `node_cpu_seconds_total`
@@ -695,6 +688,7 @@ sudo systemctl status grafana-server
 ### 4.2. Configurar Grafana - Conectar a Prometheus
 
 1. Abre el navegador y ve a: `http://192.168.60.3:3000`
+<img width="1905" height="1031" alt="image" src="https://github.com/user-attachments/assets/6e0ae278-bc75-4cb3-9a7d-1ce0b7431753" />
 2. Inicia sesión con:
    - Usuario: `admin`
    - Contraseña: `admin`
